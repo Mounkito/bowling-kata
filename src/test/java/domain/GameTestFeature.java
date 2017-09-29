@@ -44,6 +44,5 @@ public class GameTestFeature {
         game.add(new Frame(new Roll[]{new Roll(5), new Roll(3)}));
         game.add(new Frame(new Roll[]{new Roll(5), new Roll(4)}));
         assertThat(game.getScore()).isEqualTo(84);
-
     }
 }
