@@ -39,4 +39,12 @@ public class Frame {
     public void addScoreBonus(int bonus) {
         score += bonus;
     }
+
+    public boolean isStrike() {
+        if(rolls[0].getScore() == 10)
+        {
+            return true;
+        }
+        return false;
+    }
 }

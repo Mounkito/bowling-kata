@@ -50,6 +50,10 @@ public class FrameTest {
         assertThat(frame.getScore()).isEqualTo(14);
     }
 
-
-
+    @Test
+    public void frame_with_10_score_is_strike() throws Exception {
+        when(roll.getScore()).thenReturn(10);
+        Frame frame = new Frame(new Roll[]{roll});
+        assertThat(frame.isStrike()).isTrue();
+    }
 }
