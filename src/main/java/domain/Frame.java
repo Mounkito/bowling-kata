@@ -17,9 +17,7 @@ public class Frame {
         return score;
     }
 
-    public int getScoreRoll1() {
-        return rolls[0].getScore();
-    }
+
 
     @Override
     public String toString() {
@@ -30,10 +28,18 @@ public class Frame {
     }
 
     public boolean isSpare() {
-        if(score == 10){
+        if(!isStrike() && getScoreRoll1() + getScoreRoll2() == 10){
             return true;
         }
         return false;
+    }
+
+    public int getScoreRoll1() {
+        return rolls[0].getScore();
+    }
+
+    public int getScoreRoll2() {
+        return rolls[1].getScore();
     }
 
     public void addScoreBonus(int bonus) {
