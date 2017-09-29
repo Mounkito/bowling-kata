@@ -33,4 +33,12 @@ public class GameTest {
         game.add(frame);
         assertThat(game.getScore()).isEqualTo(1);
     }
+
+    @Test
+    public void should_calc_score_with_two_frame() throws Exception {
+        when(frame.getScore()).thenReturn(1,2);
+        game.add(frame);
+        game.add(frame);
+        assertThat(game.getScore()).isEqualTo(3);
+    }
 }

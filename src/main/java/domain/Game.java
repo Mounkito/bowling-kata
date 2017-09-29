@@ -1,18 +1,25 @@
 package domain;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Game {
 
     private int score;
-    private Frame frame;
+    private List<Frame> frames = new ArrayList<>();
 
     public int getScore() {
-        if (frame == null) {
+        if (frames == null) {
             return 0;
         }
-        return frame.getScore();
+        int score = 0;
+        for (Frame frame : frames) {
+            score += frame.getScore();
+        }
+        return score;
     }
 
     public void add(Frame frame) {
-        this.frame = frame;
+        this.frames.add(frame);
     }
 }
