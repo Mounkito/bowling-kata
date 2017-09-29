@@ -42,5 +42,14 @@ public class FrameTest {
         assertThat(frame.isSpare()).isFalse();
     }
 
+    @Test
+    public void adding_bonus_score_for_a_spare() throws Exception {
+        when(roll.getScore()).thenReturn(4,5);
+        Frame frame = new Frame(new Roll[]{roll,roll});
+        frame.addScoreBonus(5);
+        assertThat(frame.getScore()).isEqualTo(14);
+    }
+
+
 
 }

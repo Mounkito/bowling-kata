@@ -39,4 +39,8 @@ public class Frame {
         }
         return false;
     }
+
+    public void addScoreBonus(int bonus) {
+        score += bonus;
+    }
 }
