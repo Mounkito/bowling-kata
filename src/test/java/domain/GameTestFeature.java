@@ -45,4 +45,20 @@ public class GameTestFeature {
         game.add(new Frame(new Roll[]{new Roll(5), new Roll(4)}));
         assertThat(game.getScore()).isEqualTo(84);
     }
+
+    @Test
+    public void game_with_one_spare_and_one_strike_should_score_84() throws Exception {
+        // ROLL : 3/4 3/7 5/3 5/3 6/3 4/3 5/3 2/3 5/3 5/4/x
+        game.add(new Frame(new Roll[]{new Roll(3), new Roll(4)}));
+        game.add(new Frame(new Roll[]{new Roll(3), new Roll(7)}));
+        game.add(new Frame(new Roll[]{new Roll(5), new Roll(3)}));
+        game.add(new Frame(new Roll[]{new Roll(5), new Roll(3)}));
+        game.add(new Frame(new Roll[]{new Roll(6), new Roll(3)}));
+        game.add(new Frame(new Roll[]{new Roll(10)}));
+        game.add(new Frame(new Roll[]{new Roll(5), new Roll(3)}));
+        game.add(new Frame(new Roll[]{new Roll(2), new Roll(3)}));
+        game.add(new Frame(new Roll[]{new Roll(5), new Roll(3)}));
+        game.add(new Frame(new Roll[]{new Roll(5), new Roll(4)}));
+        assertThat(game.getScore()).isEqualTo(95);
+    }
 }
