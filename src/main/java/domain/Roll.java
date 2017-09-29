@@ -11,4 +11,10 @@ public class Roll {
         return score;
     }
 
+    @Override
+    public String toString() {
+        return "Roll{" +
+                "score=" + score +
+                '}';
+    }
 }

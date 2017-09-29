@@ -11,10 +11,15 @@ public class Game {
         if (frames == null) {
             return 0;
         }
+
         int score = 0;
-        for (Frame frame : frames) {
-            score += frame.getScore();
+        for (int i = 0; i < frames.size(); i++) {
+            if(frames.get(i).isSpare())
+                frames.get(i).setScore(10 + frames.get(i+1).getScoreRoll1());
+            score += frames.get(i).getScore();
+            System.out.println(score);
         }
+
         return score;
     }
 
