@@ -20,4 +20,8 @@ public class Frames {
             return null;
         return frames.get(++index);
     }
+
+    public int getRollOneScoreForNextFrame() {
+       return getNext().getScoreRoll1();
+    }
 }

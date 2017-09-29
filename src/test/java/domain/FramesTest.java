@@ -39,4 +39,13 @@ public class FramesTest {
         frames.add(lastFrame);
         Assertions.assertThat(frames.getNext()).isNull();
     }
+
+    @Test
+    public void should_return_the_roll_score_for_a_frame() throws Exception {
+        Frame firstFrame = new Frame((new Roll[]{new Roll(1), new Roll(2)}));
+        Frame lastFrame = new Frame((new Roll[]{new Roll(4), new Roll(2)}));
+        frames.add(firstFrame);
+        frames.add(lastFrame);
+        Assertions.assertThat(frames.getRollOneScoreForNextFrame()).isEqualTo(4);
+    }
 }
