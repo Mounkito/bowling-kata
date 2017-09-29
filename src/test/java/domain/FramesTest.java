@@ -57,4 +57,11 @@ public class FramesTest {
         frames.add(lastFrame);
         Assertions.assertThat(frames.getRollOneScoreForNextFrame()).isEqualTo(4);
     }
+
+    @Test
+    public void should_return_true_if_the_current_is_spare() throws Exception {
+        Frame firstFrame = new Frame((new Roll[]{new Roll(5), new Roll(5)}));
+        frames.add(firstFrame);
+        Assertions.assertThat(frames.isCurrentSpare()).isTrue();
+    }
 }

@@ -29,4 +29,7 @@ public class Frames {
        return getNext().getScoreRoll1();
     }
 
+    public boolean isCurrentSpare() {
+        return getCurrent().isSpare();
+    }
 }
