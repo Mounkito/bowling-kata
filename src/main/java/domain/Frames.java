@@ -36,4 +36,8 @@ public class Frames {
     public void addBonusToCurrent() {
         getCurrent().addScoreBonus(getRollOneScoreForNextFrame());
     }
+
+    public int getCurrentScore() {
+        return getCurrent().getScore();
+    }
 }

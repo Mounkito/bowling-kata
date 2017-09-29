@@ -74,4 +74,11 @@ public class FramesTest {
         frames.addBonusToCurrent();
         Assertions.assertThat(firstFrame.getScore()).isEqualTo(14);
     }
+
+    @Test
+    public void should_return_the_current_score_of_a_frame() throws Exception {
+        Frame firstFrame = new Frame((new Roll[]{new Roll(5), new Roll(5)}));
+        frames.add(firstFrame);
+        Assertions.assertThat(frames.getCurrentScore()).isEqualTo(10);
+    }
 }
