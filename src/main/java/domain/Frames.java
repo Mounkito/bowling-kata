@@ -32,4 +32,8 @@ public class Frames {
     public boolean isCurrentSpare() {
         return getCurrent().isSpare();
     }
+
+    public void addBonusToCurrent() {
+        getCurrent().addScoreBonus(getRollOneScoreForNextFrame());
+    }
 }

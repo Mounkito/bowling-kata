@@ -64,4 +64,14 @@ public class FramesTest {
         frames.add(firstFrame);
         Assertions.assertThat(frames.isCurrentSpare()).isTrue();
     }
+
+    @Test
+    public void should_add_bonus_to_current_frame() throws Exception {
+        Frame firstFrame = new Frame((new Roll[]{new Roll(5), new Roll(5)}));
+        Frame lastFrame = new Frame((new Roll[]{new Roll(4), new Roll(5)}));
+        frames.add(firstFrame);
+        frames.add(lastFrame);
+        frames.addBonusToCurrent();
+        Assertions.assertThat(firstFrame.getScore()).isEqualTo(14);
+    }
 }
