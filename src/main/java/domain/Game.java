@@ -13,7 +13,7 @@ public class Game {
         do {
             if (frames.isCurrentSpare())
                 frames.addBonusToCurrent();
-            score += frames.getCurrent().getScore();
+            score += frames.getCurrentScore();
         } while (frames.getNext() != null);
         return score;
     }
