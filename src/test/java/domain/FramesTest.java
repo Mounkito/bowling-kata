@@ -33,5 +33,10 @@ public class FramesTest {
         Assertions.assertThat(frames.getNext()).isEqualTo(expectedFrame);
     }
 
-
+    @Test
+    public void should_return_null_if_the_next_frame_does_not_exist() throws Exception {
+        Frame lastFrame = new Frame((new Roll[]{new Roll(1), new Roll(2)}));
+        frames.add(lastFrame);
+        Assertions.assertThat(frames.getNext()).isNull();
+    }
 }

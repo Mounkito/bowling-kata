@@ -16,6 +16,8 @@ public class Frames {
     }
 
     public Frame getNext() {
+        if(index == size() -1)
+            return null;
         return frames.get(++index);
     }
 }
