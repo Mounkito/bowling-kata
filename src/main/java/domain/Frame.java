@@ -17,10 +17,6 @@ public class Frame {
         return score;
     }
 
-    public void setScore(int score) {
-        this.score = score;
-    }
-
     public int getScoreRoll1() {
         return rolls[0].getScore();
     }

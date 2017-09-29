@@ -1,24 +1,20 @@
 package domain;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class Game {
 
-    private List<Frame> frames = new ArrayList<>();
+    private Frames frames = new Frames();
 
     public int getScore() {
-        if (frames == null) {
+        if (frames.size() == 0) {
             return 0;
         }
 
         int score = 0;
-        for (int i = 0; i < frames.size(); i++) {
-            if(frames.get(i).isSpare())
-                frames.get(i).setScore(10 + frames.get(i+1).getScoreRoll1());
-            score += frames.get(i).getScore();
-        }
-
+        do {
+            if (frames.isCurrentSpare())
+                frames.addBonusToCurrent();
+            score += frames.getCurrent().getScore();
+        } while (frames.getNext() != null);
         return score;
     }
 

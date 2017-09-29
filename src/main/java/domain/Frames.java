@@ -26,7 +26,7 @@ public class Frames {
     }
 
     public int getRollOneScoreForNextFrame() {
-       return getNext().getScoreRoll1();
+       return frames.get(index + 1).getScoreRoll1();
     }
 
     public boolean isCurrentSpare() {
