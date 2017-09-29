@@ -5,7 +5,6 @@ import java.util.List;
 
 public class Game {
 
-    private int score;
     private List<Frame> frames = new ArrayList<>();
 
     public int getScore() {
