@@ -27,4 +27,20 @@ public class FrameTest {
         Frame frame = new Frame(new Roll[]{roll,roll});
         assertThat(frame.getScore()).isEqualTo(8);
     }
+
+    @Test
+    public void frame_with_10_score_is_spare() throws Exception {
+        when(roll.getScore()).thenReturn(5,5);
+        Frame frame = new Frame(new Roll[]{roll,roll});
+        assertThat(frame.isSpare()).isTrue();
+    }
+
+    @Test
+    public void frame_with_9_score_is_not_spare() throws Exception {
+        when(roll.getScore()).thenReturn(4,5);
+        Frame frame = new Frame(new Roll[]{roll,roll});
+        assertThat(frame.isSpare()).isFalse();
+    }
+
+
 }

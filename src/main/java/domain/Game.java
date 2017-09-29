@@ -17,7 +17,6 @@ public class Game {
             if(frames.get(i).isSpare())
                 frames.get(i).setScore(10 + frames.get(i+1).getScoreRoll1());
             score += frames.get(i).getScore();
-            System.out.println(score);
         }
 
         return score;
