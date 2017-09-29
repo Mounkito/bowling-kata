@@ -1,6 +1,7 @@
 package domain;
 
 import org.assertj.core.api.Assertions;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
@@ -9,11 +10,28 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class FramesTest {
 
 
+    private Frames frames;
+
+    @Before
+    public void setUp() throws Exception {
+        frames = new Frames();
+    }
+
     @Test
     public void should_add_one_frame() throws Exception {
-        Frames frames = new Frames();
         Frame firstFrame = new Frame((new Roll[]{new Roll(1), new Roll(2)}));
         frames.add(firstFrame);
         Assertions.assertThat(frames.size()).isEqualTo(1);
     }
+
+    @Test
+    public void should_return_the_next_element() throws Exception {
+        Frame firstFrame = new Frame((new Roll[]{new Roll(1), new Roll(2)}));
+        Frame expectedFrame = new Frame((new Roll[]{new Roll(2), new Roll(3)}));
+        frames.add(firstFrame);
+        frames.add(expectedFrame);
+        Assertions.assertThat(frames.getNext()).isEqualTo(expectedFrame);
+    }
+
+
 }
