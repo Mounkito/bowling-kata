@@ -21,7 +21,12 @@ public class Frames {
         return frames.get(++index);
     }
 
+    public Frame getCurrent() {
+        return frames.get(index);
+    }
+
     public int getRollOneScoreForNextFrame() {
        return getNext().getScoreRoll1();
     }
+
 }

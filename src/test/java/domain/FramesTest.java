@@ -25,7 +25,16 @@ public class FramesTest {
     }
 
     @Test
-    public void should_return_the_next_element() throws Exception {
+    public void should_return_the_currentFrame() throws Exception {
+        Frame firstFrame = new Frame((new Roll[]{new Roll(1), new Roll(2)}));
+        Frame expectedFrame = new Frame((new Roll[]{new Roll(2), new Roll(3)}));
+        frames.add(firstFrame);
+        frames.add(expectedFrame);
+        Assertions.assertThat(frames.getCurrent()).isEqualTo(firstFrame);
+    }
+
+    @Test
+    public void should_return_the_next_frame() throws Exception {
         Frame firstFrame = new Frame((new Roll[]{new Roll(1), new Roll(2)}));
         Frame expectedFrame = new Frame((new Roll[]{new Roll(2), new Roll(3)}));
         frames.add(firstFrame);
